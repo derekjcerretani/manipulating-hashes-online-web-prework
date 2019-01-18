@@ -17,8 +17,10 @@ def first_challenge
 
   contacts.each do |contact, data|
     data.each do |attribute, value|
-      value.delete_if do |flavor|
-        flavor == "strawberry"
+      value.each do |array, flavor|
+        flavor.delete_if do |thing|
+          thing == "strawberry"
+        end
       end
     end
   end
